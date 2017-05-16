@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js">
+<head> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="description" content="买单返-消费即返利，单单返红包"/>
+  <meta name="keywords" content="maidanfan,买单返"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+  <title>最新入住</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit"/>
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="../../i/favicon.png"/>
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <link rel="stylesheet" href="../../css/amazeui.css"/>
+  <link rel="stylesheet" href="nearbyShops.css"/>
+</head> 
+<body class="no-js"> 
+<!-- 头部 -->
+  <div style="position:relative;overflow:hidden;width:100%;height:95px;">
+    <div style="position:fixed;height:95px;width:100%;z-index:1111;">
+      <header class="am-header am-text-center am-vertical-align">
+          <span id="title" class="am-text-lg am-vertical-align-middle"></span>
+      </header>
+      <!--分类导航 -->
+      <nav class="scrollspy-nav" data-am-scrollspynav="{offsetTop:49}" data-am-sticky>
+        <ul class="am-avg-sm-3 am-text-center am-text-sm am-padding-sm" style="background-color:#fff;">
+          <li class="allKinds">全部分类<span class="am-icon-sort-down am-margin-left-xs"></span></li>
+          <li class="allCity">全城<span class="am-icon-sort-down am-margin-left-xs"></span></li>
+          <li class="smartOrder">智能排序<span class="am-icon-sort-down am-margin-left-xs"></span></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- 遮罩层 -->
+    <div class="am-collapse" id="all">
+    </div>
+    <div class="am-collapse" id="all-city">
+    </div>
+    <div class="am-collapse" id="smart-order">
+    </div>
+  <!-- 一级菜单 -->
+    <!-- 全部分类 -->
+    <div class="all-list">
+      <ul id="leftlist" class="am-list am-text-center am-text-sm">
+      
+      </ul>
+    </div>
+ 
+    <!-- 全城 -->
+    <div class="city-list">
+      <ul class="am-list am-text-sm nn">
+        <li class="am-padding-sm am-padding-left-lg active">全城</li>
+        <li class="am-padding-sm am-padding-left-lg">500m</li>
+        <li class="am-padding-sm am-padding-left-lg">1km</li>
+        <li class="am-padding-sm am-padding-left-lg">2km</li>
+        <li class="am-padding-sm am-padding-left-lg">3km</li>
+      </ul>
+    </div>
+     <!-- 智能排序 -->
+    <div class="smart-order-list">
+      <ul class="am-list am-text-sm nn">
+        <li class="am-padding-sm am-padding-left-lg active">智能排序</li>
+        <li class="am-padding-sm am-padding-left-lg">返现最多</li>
+        <li class="am-padding-sm am-padding-left-lg">离我最近</li>
+        <li class="am-padding-sm am-padding-left-lg">人气最高</li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- 商家列表 -->
+  <div class="am-g">
+      <ul id = "list" class="am-list" style="overflow:auto;"> 
+       <!--  <li class="am-cf am-padding-horizontal-sm">
+          <a href="detail.html" style="color:#333;display:block;padding:7px 0;overflow:hidden;">
+            <div class="am-fl am-text-center img_placeholder"> 
+              <img src="../../images/p7933-l.jpg" class="am-radius" width=100 height=80 data-echo="../../images/p7933-l.jpg"/>
+            </div>
+            <div class="products_info am-fr">
+              <div class="am-text-truncate" style="line-height:1.6;overflow:hidden;">
+                <span class="am-text-truncate am-fl products_name">凤鸣春泡馍馆</span>
+                <span class="am-text-xs am-fr">200m</span>
+              </div>
+              <div class="am-text-left am-text-xs am-text-wrap products_address"><i class="am-icon-paper-plane"></i> 陕西省西安市雁塔区长安南路102号</div>
+              <div class="products_hot am-text-sm">
+                <span class="am-text-danger am-text-xs am-fl">返<strong class="am-text-lg">7.5</strong>%</span>
+                <span class="am-text-xs am-fr">
+                   <i class="am-icon-fire am-text-danger"></i>人气168
+                </span>
+              </div>
+            </div>
+          </a>
+        </li> -->
+      </ul>
+  </div>
+<!-- 更多 -->
+  <div class="am-list-news-ft am-cf am-padding-vertical">
+    <h3><a class="am-list-news-more" href="#" style="color:#333;">更多></a></h3>
+  </div>
+<!--底部 -->
+<div data-am-widget="navbar" class="am-navbar am-text-center">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+      <li>
+        <a href="../home/home.html">
+          <span class="am-icon-home"></span>
+          <span class="am-navbar-label">首页</span>
+        </a>
+      </li>
+     
+      <li>
+        <a href="../positionPage/positionPage.html"  style="color:#E60827;">
+          <span class="am-icon-compass"></span>
+          <span class="am-navbar-label">附近</span>
+        </a>
+      </li>
+      <li>
+        <a href="../businessRecommend/businessRecommend.html">
+          <span class="am-icon-bookmark"></span>
+          <span class="am-navbar-label">福利社</span>
+        </a>
+      </li>
+      <li>
+        <a href="../../index.html">
+          <span class="am-icon-user"></span>
+          <span class="am-navbar-label">个人中心</span>
+        </a>
+      </li>
+ 
+    </ul>
+  </div>
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+  <script src="../../js/jquery.min.js"></script>  
+  <script src="../../js/amazeui.min.js"></script>
+  <script src="../../js/echo.js"></script>
+  <script src="nearbyShops.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    var htt = "http://172.20.9.226:8080";
+    $(".nn li").css("textAlign","center");
+    echo.init({
+      offset: 100,
+      throttle: 250,
+      unload: false,
+      callback: function (element, op) {
+      //console.log(element, 'has been', op + 'ed');
+      }
+    });
+      function GetRequest() {
+         var url = location.search; //获取url中"?"符后的字串
+         if (url.indexOf("?") != -1) {    //判断是否有参数
+            var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串
+            strs = str.split("=");   //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&号分隔 再用等号进行分隔）
+            return (strs[1]);          //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
+         }
+      }
+
+      $.ajax({
+            url:  htt+"/App/Index/category",
+            type: "get",
+            dataType: "json",
+            success: function(msg) {
+                if(msg.code ==1){
+                    console.log(msg.data);
+                    var data = msg.data;
+                   for (var i = 0; i <data.length-1; i++) {
+                       console.log(data[i].photo);
+                       var url = "../nearbyShops/nearbyShops.html?id=";
+
+                      $("<li tataid="+data[i].gid+" class='am-padding-sm am-vertical-align dd'><img src="+data[i].photo+" style='width:18px;height:18px' class='am-img-responsive am-vertical-align-middle am-fl am-margin-left-sm'/><span class='am-text-sm am-fl am-margin-left-sm'>"+data[i].gname+"</span></li>").appendTo("#leftlist"); 
+                    
+                }
+                  $("#leftlist").delegate(".dd","click",function(){
+                           var c = $(this).attr("tataid");
+
+                             $(this).find("span").addClass("active");
+                          location = "nearbyShops.html?id="+c;      //调账
+                      })
+              }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                // alert(XMLHttpRequest.status);
+                // alert(XMLHttpRequest.readyState);
+               alert("网络不好，稍后重试！");
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                this; // 调用本次AJAX请求时传递的options参数
+            }
+
+      })
+
+
+
+
+
+
+
+      var cityid = localStorage.getItem("city_id");
+      var lat = localStorage.getItem("lat");
+      var lng = localStorage.getItem("lng");
+      var data = {group_id:GetRequest(),city_id:cityid,lat:lat,lng:lng};
+      console.log(data);
+      var url;
+          if(decodeURIComponent(GetRequest()) =="xindian"){        //新店入住
+               url =  htt+"/App/Index/moreShop";
+          }else if(decodeURIComponent(GetRequest()) =="renqi"){  
+                 url = htt+"/App/Index/renqiMerchant"
+          }else{
+             if(decodeURIComponent(GetRequest()) =="tuijian"){
+                 url = htt+"/App/Index/recommendInfo"
+             }else{
+                url = htt+"/App/Index/categoryMerchant"
+             }
+          } 
+              $.ajax({
+                url: url,
+                type: "get",
+                data:data,
+                dataType: "json",
+                success: function(msg) {
+                    console.log(msg);
+                      var data = msg.data;
+                      var name = msg.name;
+                     if(msg.code ==1){
+                      $("#title").text(name);
+                      console.log(data.length);
+                      console.log(data);
+                      for (var i = 0; i <data.length; i++) {
+                           var id =data[i].id;
+                           var url = "../detail/detail.html?id="+id;        //拼接跳转路径
+                           console.log(id);
+                           $("  <li class='am-cf am-padding-horizontal-sm products_lists'>"
+                                 +" <a href='"+url+"' style='color:#333;display:block;padding:7px 0;overflow:hidden;'>"
+                                   +" <div class='am-fl am-text-center img_placeholder' style='background:url("+data[i].img+");background-size:100% 100%'> "
+                                    +"</div>"
+                                    +"<div class='products_info am-fr'>"
+                                      +"<div class='am-text-truncate' style='line-height:1.6;overflow:hidden;'>"
+                                        +"<span class='am-text-truncate am-fl products_name'>"+data[i].title+"</span>"
+                                        +"<span class='am-text-xs am-fr'>"+data[i].distance+"</span>"
+                                     +" </div>"
+                                      +"<div class='am-text-left am-text-xs am-text-wrap products_address'><i class='am-icon-paper-plane'></i>"+data[i].address+"</div>"
+                                      +"<div class='products_hot am-text-sm'>"
+                                        +"<span class='am-text-danger am-text-xs am-fl'>返<strong class='am-text-lg'>"+data[i].dis+"</strong>%</span>"
+                                        +"<span class='am-text-xs am-fr'>"
+                                          +" <i class='am-icon-fire am-text-danger'></i>人气<span>"+data[i].renqi+"</span>"
+                                        +"</span>"
+                                      +"</div>"
+                                   +" </div>"
+                                  +"</a>"
+                                +"</li>").appendTo("#list");
+                      }
+                    }
+                    if(msg.code =="0"){                                  //么数据跳转
+                        location = "nearbyShops_no.html?name="+name;
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    // alert(XMLHttpRequest.status);
+                    // alert(XMLHttpRequest.readyState);
+                     alert("勿忘");
+                },
+                complete: function(XMLHttpRequest, textStatus) {
+                    this; // 调用本次AJAX请求时传递的options参数
+                }
+            });
+        
+
+  })
+
+  </script>
+</body>
+</html>

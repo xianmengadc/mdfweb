@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="买单返-消费即返利，单单返红包">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>买单返</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="../../i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="../../i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="../../i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="../../css/amazeui.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+    .icon-meishi{
+      width:22px;
+      height:22px;
+    }
+  </style>
+</head>
+<body>
+<!-- 头部 -->
+  <header class="am-header" data-am-widget="header">
+    <div class="am-container am-text-center">
+      <a href="javascript:" onclick="history.back(-1);" class="am-icon-angle-left am-text-xl am-fl" style="color:#333;">
+      </a>
+      <span class="am-text-lg" style="margin-left:-15px;">全部分类</span>
+    </div> 
+  </header>
+<!--主体内容-->
+  <div id="list" class="am-container am-text-default am-padding-sm">
+  <!--美食-->
+ 
+  <!-- 电影 -->
+    
+  </div>
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+  <script type="text/javascript" src="allkinds.js"></script>
+  <script>
+      var htt = "http://172.20.9.226:8080";
+      $.ajax({
+        url:  htt+"/App/Index/allCategory",
+        type: "get",
+        dataType: "json",
+        success: function(re) {
+            console.log(re);
+            var data = re.data;
+            for (var i = 0; i <data.length; i++) {
+                $("<div class='fun'>"
+                      +"<div class='am-container'>"
+                        +"<img src="+data[i].img+" class='icon-meishi'/>"
+                        +"<a href='../nearbyShops/nearbyShops.html?id="+data[i].id+"' style='color:#333' class='am-margin-left-sm'>"+data[i].name+"</a>"
+                     +" </div>"
+                     +" <div class='am-container am-padding-sm am-radius'>"
+                        +"<div class='am-g am-text-center'>"
+                          +"<ul class='ul"+i+" nn' class='am-avg-sm-4 am-padding-sm' id='fun-kinds' >"
+                           
+                          +"</ul> "
+                        +"</div>"
+                      +"</div>"
+                    +"</div>").appendTo("#list");
+                  var uln = ".ul"+i;
+                  for (var j = 0; j <data[i].subcat.length; j++) {
+                      $("<li class='am-vertical-sm'><a href='../nearbyShops/nearbyShops.html?id="+data[i].subcat[j].id+"' style='color:#333;'>"+data[i].subcat[j].name+"</a></li>").appendTo(uln);
+                  }
+                  $(".nn").addClass("am-avg-sm-4 am-padding-sm");
+
+            }
+  
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            // alert(XMLHttpRequest.status);
+            // alert(XMLHttpRequest.readyState);
+           alert("网络不好，稍后重试！");
+        },
+        complete: function(XMLHttpRequest, textStatus) {
+            this; // 调用本次AJAX请求时传递的options参数
+        }
+    });
+  </script>
+</body>
+</html>

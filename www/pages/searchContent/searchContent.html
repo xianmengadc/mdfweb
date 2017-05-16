@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>买单返</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="../../i/favicon.png">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="../../css/amazeui.css">
+  <link rel="stylesheet" href="searchContent.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!-- 头部 -->
+  <header class="am-container am-padding-sm">
+    <div class="search-box am-text-sm am-text-center">
+      <i class="am-icon-search am-vertical-align-middle"></i>
+      <input class="am-radius am-padding-left-lg" type="text" id="keyword" placeholder="请输入关键词" autofocus="autofocus"/>
+      <span class="cancel am-fr am-text-sm" onclick="window.location.href='index.html'">取消</span>
+    </div> 
+  </header>
+
+  <div class="am-container am-text-center am-margin-vertical-lg">
+    <span>请输入搜索的相关商品</span>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script type="text/javascript">
+     var htt = "http://172.20.9.226:8080";
+
+    var lo_city = localStorage.getItem("city_name");
+    var cityid = localStorage.getItem("city_id");
+    var lat = localStorage.getItem("lat");
+    var lng = localStorage.getItem("lng");
+
+     $("body").keydown(function() {
+             var text = $("#keyword").val();
+             if (event.keyCode == "13") {//keyCode=13是回车键
+                 search(text);
+             }
+      });
+      function search(text){
+        var data = {search:text,lat:lat,lng:lng,city_id:cityid};
+        console.log(data);
+        $.ajax({
+            url:  htt+"/App/Index/keyWord",
+            type: "get",
+            data:data,
+            dataType: "json",
+            success: function(msg) {
+                console.log(msg);
+                if(msg.code ==1){
+                  location = "searchResult.html?keyword="+text;      //传关键字
+                }
+                if(msg.code ==0){
+
+                  location = "searchResult_no.html"
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                // alert(XMLHttpRequest.status);
+                // alert(XMLHttpRequest.readyState);
+               alert("网络不好，稍后重试！");
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                this; // 调用本次AJAX请求时传递的options参数
+            }
+        });
+
+      }
+  </script>
+</body>
+</html>

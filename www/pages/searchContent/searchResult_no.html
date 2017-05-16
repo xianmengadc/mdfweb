@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>搜索结果</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="../../i/favicon.png">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="../../css/amazeui.css">
+  <link rel="stylesheet" href="searchContent.css">
+  <link rel="stylesheet" href="../nearbyShops/nearbyShops.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!-- 头部 -->
+<header class="am-header am-no-layout" data-am-widget="header">
+    <div class="am-container">
+        <div class="am-u-sm-5">
+            <a href="javascript:" onclick="history.back(-1);" class="am-icon-angle-left am-text-xl am-fl" style="color:#333;">
+            </a>
+        </div>
+        <div class="am-u-sm-7 am-center">
+            <span class="am-text-lg am-margin-left-xxl">搜索结果</span>
+        </div>
+    </div> 
+</header>
+<div style="background: #ededed" class="am-g am-text-center am-padding-xs am-text-xs">抱歉，没有搜索到结果...</div>
+<!-- 商家列表 -->
+  <div class="am-g">
+  <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default new-store-content am-no-layout" style="margin-top:0">
+        <h2>
+          <span class="titlebar">推荐商家</span>
+        </h2>
+        <nav class="am-titlebar-nav">
+          <a href="#" class="am-text-sm">更多 <i class="am-icon-chevron-right"></i></a>
+        </nav>
+  </div>
+
+
+
+      <ul id = "list" class="am-list" style="overflow:auto;"> 
+ <!--        <li class="am-cf am-padding-horizontal-sm">
+          <a href="detail.html" style="color:#333;display:block;padding:7px 0;overflow:hidden;">
+            <div class="am-fl am-text-center img_placeholder"> 
+              <img src="../../images/p7933-l.jpg" class="am-radius" width=100 height=80 data-echo="../../images/p7933-l.jpg"/>
+            </div>
+            <div class="products_info am-fr">
+              <div class="am-text-truncate" style="line-height:1.6;overflow:hidden;">
+                <span class="am-text-truncate am-fl products_name">凤鸣春泡馍馆</span>
+                <span class="am-text-xs am-fr">200m</span>
+              </div>
+              <div class="am-text-left am-text-xs am-text-wrap products_address"><i class="am-icon-paper-plane"></i> 陕西省西安市雁塔区长安南路102号</div>
+              <div class="products_hot am-text-sm">
+                <span class="am-text-danger am-text-xs am-fl">返<strong class="am-text-lg">7.5</strong>%</span>
+                <span class="am-text-xs am-fr">
+                   <i class="am-icon-fire am-text-danger"></i>人气168
+                </span>
+              </div>
+            </div>
+          </a>
+        </li> -->
+      </ul>
+  </div>
+<!-- 更多 -->
+  <div class="am-list-news-ft am-cf am-padding-vertical">
+    <h3><a class="am-list-news-more" href="#" style="color:#333;">更多></a></h3>
+  </div>
+
+
+  <script src="../../js/jquery.min.js"></script>
+  <script type="text/javascript">
+     var htt = "http://172.20.9.226:8080";
+
+    var lo_city = localStorage.getItem("city_name");
+    var cityid = localStorage.getItem("city_id");
+    var lat = localStorage.getItem("lat");
+    var lng = localStorage.getItem("lng");
+    search();
+   
+      function search(){
+        var data = {lat:lat,lng:lng,city_id:cityid};
+        $.ajax({
+            url:  htt+"/App/Index/recommendInfo",
+            type: "get",
+            data:data,
+            dataType: "json",
+            success: function(msg) {
+                console.log(msg);
+                  var data = msg.data;
+                 if(msg.code ==1){
+                  $("#title").text(name);
+                  console.log(data.length);
+                  console.log(data);
+                  for (var i = 0; i <data.length; i++) {
+                       var id =data[i].id;
+                       var url = "../detail/detail.html?id="+id;        //拼接跳转路径
+                       console.log(id);
+                       $("  <li class='am-cf am-padding-horizontal-sm products_lists'>"
+                             +" <a href='"+url+"' style='color:#333;display:block;padding:7px 0;overflow:hidden;'>"
+                               +" <div class='am-fl am-text-center img_placeholder' style='background:url("+data[i].img+");background-size:100% 100%'> "
+                                +"</div>"
+                                +"<div class='products_info am-fr'>"
+                                  +"<div class='am-text-truncate' style='line-height:1.6;overflow:hidden;'>"
+                                    +"<span class='am-text-truncate am-fl products_name'>"+data[i].title+"</span>"
+                                    +"<span class='am-text-xs am-fr'>"+data[i].distance+"</span>"
+                                 +" </div>"
+                                  +"<div class='am-text-left am-text-xs am-text-wrap products_address'><i class='am-icon-paper-plane'></i>"+data[i].address+"</div>"
+                                  +"<div class='products_hot am-text-sm'>"
+                                    +"<span class='am-text-danger am-text-xs am-fl'>返<strong class='am-text-lg'>"+data[i].dis+"</strong>%</span>"
+                                    +"<span class='am-text-xs am-fr'>"
+                                      +" <i class='am-icon-fire am-text-danger'></i>人气<span>"+data[i].renqi+"</span>"
+                                    +"</span>"
+                                  +"</div>"
+                               +" </div>"
+                              +"</a>"
+                            +"</li>").appendTo("#list");
+                  }
+                }
+                if(msg.code =="0"){                                
+                   alert("重试")
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                // alert(XMLHttpRequest.status);
+                // alert(XMLHttpRequest.readyState);
+               alert("网络不好，稍后重试！");
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                this; // 调用本次AJAX请求时传递的options参数
+            }
+        });
+
+      }
+
+      function GetRequest() {
+         var url = location.search; //获取url中"?"符后的字串
+         if (url.indexOf("?") != -1) {    //判断是否有参数
+            var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串
+            strs = str.split("=");   //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&号分隔 再用等号进行分隔）
+            return (strs[1]);          //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
+         }
+      }
+    
+
+  </script>
+</body>
+</html>

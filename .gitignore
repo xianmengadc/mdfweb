@@ -1,0 +1,15 @@
+.gradle
+local.properties
+.idea
+.DS_Store
+build
+out
+*.iml
+*.ipr
+*.iws
+jshint-output.html
+xcuserdata
+node_modules/
+platforms/
+resources/
+plugins/

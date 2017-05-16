@@ -1,0 +1,488 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="买单返-消费即返利，单单返红包">
+  <meta name="keywords" content="买单返，maidanfan">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,user-scalable=no">
+  <title>买单返</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="../../i/logo.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes"> 
+  <link rel="icon" sizes="192x192" href="../../i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/> 
+  <link rel="apple-touch-icon-precomposed" href="assets/i/logo.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/logo.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="../../css/amazeui.css">
+  <link rel="stylesheet" href="detail.css">
+  <link rel="stylesheet" href="../nearbyShops/nearbyShops.css">
+  <style>
+      .yellor{color:#f3d01d;}
+      .hongbaoWrap{
+      display:inline-block;
+      width:100%;
+      height:18px;
+      vertical-align: bottom;
+      overflow:hidden;
+      background:url(../../images/hongbao.png);
+      background-size:16px 18px;
+    }
+  </style>
+</head>
+<body class="no-js">
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a
+  href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<!-- 顶部 -->
+
+<!-- 主体 -->
+<!-- 商家图片 -->
+  <div class="merchants-detail">
+    <div class="merchants-img">
+
+      <a href="../merchantsAlbum/merchantsAlbum.html">
+        <div class="am-slider am-slider-default am-margin-bottom-0" data-am-flexslider="{playAfterPaused: 8000}">
+          <ul  class="am-slides slides">
+           
+            <li><img id="image" src="" width="100%" height="250"/></li>
+           
+          </ul>
+        </div>
+
+        <!-- <img src="../../images/p7933-l.jpg" class="am-img-responsive" width=100% height=250/> -->
+        <div class="header-icon am-container">
+          <a href="javascript:" onclick="history.back(-1);" class="am-icon-angle-left am-icon-btn am-text-md"></a>
+          <span class="collect am-icon-heart-o am-icon-btn am-fr am-text-sm"></span>
+          <span class="collected am-icon-heart am-icon-btn am-fr am-text-sm"></span>
+          <span class="collected-success am-text-info"></span>
+          <a class="am-icon-share am-icon-btn am-fr am-text-sm share" id="share"></a>
+        </div>
+        <div class="album am-radius">
+          <a href="../merchantsAlbum/merchantsAlbum.html">
+            <i class="am-icon-file-image-o am-text-sm"></i>
+            <span class="am-text-xs"> <span class="am-text-danger num">1 </span>/ <span id="sliderslen">12</span></span>
+          </a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+<!--描述 --> 
+  <div class="am-g">
+    <div class="am-container am-padding-vertical-xs">
+      <span id="title" class="businessName"></span><br>
+      <span class="am-text-xs businessDes">
+        <i class="am-icon-fire am-padding-right-xs"></i>人气<span id="renqi" class="hot">500</span>
+        <span class="rmbIcon am-margin-left-sm am-margin-top-xs am-text-center">￥</span>人均<i class="am-icon-rmb"></i><span id="renjun" class="price">15</span>
+      </span> 
+    </div>
+  </div>  
+<!-- 返现 -->
+  <div class="scrollspy-nav am-padding-sm rebate" data-am-sticky>
+    <div class="am-container">
+      <div class="am-fl am-text-danger am-vertical-align" style="height:47px;background-color:#fff;">
+        <small class="am-text-danger am-vertical-align-middle">返
+       <!--  <span id="fan"></span> -->
+            <span class="am-margin-left-xs " style="display: inline-block;width: 80px; height: 25px;">
+              <span id="fan" class="hongbaoWrap"></span>
+            </span>
+        </small>
+        <span class="am-margin-left-xs am-vertical-align-middle "><span class=""></span></span>
+      </div>
+      <div class="am-fr">
+        <a href="../payPage/payPage.html"><button class="am-btn am-btn-lg am-btn-danger am-radius am-fr">去买单</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="am-list-news">
+    <ul class="am-list am-list-static">
+      <li>
+        <div class="am-container">
+         <i class="am-icon-question-circle am-fl icon-color"></i>
+         <span class="am-text-md am-fl icon-color"> 全时段返现</span>
+         <span  class="am-fr am-text-danger">
+               <span class="am-margin-left-xs " style="display: inline-block;width: 80px; height: 25px;">
+              <span id ="quan" class="hongbaoWrap"></span>
+            </span>
+         </span>
+        </div>      
+      </li>
+      <li>
+        <div class="am-container">
+          <i class="am-icon-clock-o am-fl"></i>
+          <span class="am-text-md am-fl"> 营业时间：<span id="week"></span></span>
+          <span id="time" class="am-fr am-text-danger">09:00-23:20</span>
+        </div>  
+      </li>
+      <li>
+        <div class="am-g">
+          <div class="am-u-sm-10 am-container">
+            <span id="name" class="am-text-md"></span>
+            <div class="am-padding-top-sm am-text-xs">
+              <a href="../addressMap.html">
+                <span class="am-margin-right-xs"><i class="am-icon-map-pin am-text-danger"></i></span>
+                <span id="address">西安市.长安区.朱雀大街华城泊郡108号</span>
+                <span id="dis" class="am-fr am-text-sm">300m</span>
+              </a>
+            </div>
+          </div>
+          <div class="am-u-sm-2 am-vertical-align am-text-center am-padding-right-0 phoneDiv">
+            <i class="am-icon-phone am-text-xxl am-vertical-align-middle am-text-danger" data-am-modal="{target: '#storPhone'}"></i>    
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+     
+
+<!-- 更多信息 -->
+  <div class="am-list-news am-list-news-default am-no-layout">
+    <div class="am-container">
+    <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+      <h2 class="am-titlebar-title">
+          更多信息
+      </h2>
+      <nav class="am-titlebar-nav">
+          <a href="#more" class="am-text-sm">更多 »</a>
+      </nav>
+    </div>
+    <div class="am-g">
+      <ul class="am-list am-list-static" style="margin-bottom:0;">
+        <li>
+          <div class="am-g"> 
+            <span id="star-count">
+              <!-- <i class="am-icon-star"></i>
+              <i class="am-icon-star"></i> -->
+            </span>
+            <input type="hidden" name="star" value="4" id="inputNumber"/>
+            <span class="am-fr" style="color:#333;">评价></span>
+          </div>
+        </li>
+      </ul>     
+    </div>    
+    </div>
+  </div>
+
+<!-- 推荐商家 -->
+  <div class="am-g">
+  <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default new-store-content am-no-layout" style="margin-top:0">
+        <h2>
+          <span class="titlebar">推荐商家</span>
+        </h2>
+        <nav class="am-titlebar-nav">
+          <a href="../nearbyShops/nearbyShops.html?id=tuijian" class="am-text-sm">更多 <i class="am-icon-chevron-right"></i></a>
+        </nav>
+  </div>
+
+      <ul id = "list" class="am-list" style="overflow:auto;"> 
+       
+      </ul>
+  </div>
+<!-- 更多 -->
+  <div class="am-list-news-ft am-cf am-padding-vertical">
+    <h3><a class="am-list-news-more" href="../nearbyShops/nearbyShops.html?id=tuijian" style="color:#333;">更多></a></h3>
+  </div>
+<!-- 推荐商家 -->
+<!--底部 -->
+  <div data-am-widget="navbar" class="am-navbar am-text-center">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+      <li>
+        <a href="../home/home.html">
+          <span class="am-icon-home"></span>
+          <span class="am-navbar-label">首页</span>
+        </a>
+      </li>
+     
+      <li>
+        <a href="../positionPage/positionPage.html">
+          <span class="am-icon-compass"></span>
+          <span class="am-navbar-label">附近</span>
+        </a>
+      </li>
+      <li>
+        <a href="../../index.html">
+          <span class="am-icon-user"></span>
+          <span class="am-navbar-label">个人中心</span>
+        </a>
+      </li>
+       <li>
+        <a href="../businessRecommend/businessRecommend.html">
+          <span class="am-icon-bookmark"></span>
+          <span class="am-navbar-label">商家推荐</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 拨打电话modal -->
+  <div class="am-modal-actions" id="storPhone">
+    <div class="am-modal-actions-group">
+      <ul class="am-list" style="color:#333;">
+        <li id="tel" class="am-modal-actions-header"><i class="am-icon-phone am-padding-right"></i>拨打电话</li>
+        
+ <!--        <li>
+          <a href="tel://13999999999"><i class="am-icon-mobile-phone am-padding-right-xs am-text-lg"></i>13999999999</a>
+        </li>
+
+        <li>
+          <a href="tel://0291234567"><span class="am-icon-phone-square am-padding-right-sm"></span>0291234567</a>
+        </li> -->
+
+      </ul>
+    </div>
+    <div class="am-modal-actions-group">
+      <button class="am-btn am-btn-block" data-am-modal-close>取消</button>
+    </div>
+  </div>
+  <!-- /拨打电话modal -->
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="../../js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="../../js/amazeui.min.js"></script>
+<script src="detail.js"></script>
+<script>
+var htt = "http://172.20.9.226:8080";
+ function GetRequest() {
+     var url = location.search; //获取url中"?"符后的字串
+     if (url.indexOf("?") != -1) {    //判断是否有参数
+        var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串
+        strs = str.split("=");   //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&号分隔 再用等号进行分隔）
+        return (strs[1]);          //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
+     }
+  }
+var cityid = localStorage.getItem("city_id");
+var lat = localStorage.getItem("lat");
+ var lng = localStorage.getItem("lng");
+var mid = GetRequest();
+
+var data={lng:lng,lat:lat,mid:mid,city_id:cityid};
+console.log(data);
+var lng = localStorage.getItem("lng");
+      $.ajax({
+        url:  htt+"/App/Index/MerchantDetails",
+        type: "get",
+        data:data,
+        dataType: "json",
+        success: function(msg) {
+            console.log(msg);
+            var data = msg.data;
+            if(msg.code ==1){
+             img(data.image)      //图片显示
+             $("#title,#name").text(data.title)   //标题    
+             $("#renqi").text(data.renqi)   //人气    
+             $("#renjun").text(data.average)   //人均    
+             //全段返现 
+                var quan = data.all_aratio   
+
+                  if(quan>0&&quan<=5){
+                    quan = 20;
+                  }
+                   else if(quan>5&&quan<=10){
+                    quan = 40;
+                  }
+                   else if(quan>10&&quan<=15){
+                    quan = 60;
+                  }
+                   else if(quan>15&&quan<=20){
+                    quan = 80;
+                  }
+                   else if(quan>20&&quan<=25){
+                    quan = 100;
+                  }else{
+                    quan = 0
+                  }
+                    $("#quan").width(quan+"%")   
+              //    全段返现
+              //    返现
+                var fan = data.aratio;
+                  if(fan>0&&fan<=5){
+                    fan = 20;
+                  }
+                   else if(fan>5&&fan<=10){
+                    fan = 40;
+                  }
+                   else if(fan>10&&fan<=15){
+                    fan = 60;
+                  }
+                   else if(fan>15&&fan<=20){
+                    fan = 80;
+                  }
+                   else if(fan>20&&fan<=25){
+                    fan = 100;
+                  }else{
+                    fan = 0
+                  }                     
+             $("#fan").width(fan+"%")  
+             //    返现
+
+
+             $("#week").text(data.open_time)   //    营业时间周
+             $("#time").text(data.business_time)   //    营业时间段
+             $("#address").text(data.address)   //    地址
+             $("#dis").text(data.distance)   //    距离
+             var telmum = data.telephone;
+              //拨打电话
+              if(telmum.length>1){          
+
+                  var ht = $(" <li>"
+                                +"<a href='tel://"+telmum[0]+"'><i class='am-icon-mobile-phone am-padding-right-xs am-text-lg'></i>"+telmum[0]+"</a>"
+                              +"</li>"
+                              +"<li>"
+                                +"<a href='tel://"+telmum[1]+"'><span class='am-icon-phone-square am-padding-right-sm'></span>"+telmum[1]+"</a>"
+                              +"</li>");
+                  $("#tel").before(ht);
+              }else{
+                  var ht1 = $(" <li>"
+                                +"<a href='tel://"+telmum[0]+"'><i class='am-icon-mobile-phone am-padding-right-xs am-text-lg'></i>"+telmum[0]+"</a>"
+                              +"</li>");
+                  $("#tel").before(ht1);
+              }
+              //拨打电话
+              //五星
+              var starnum = data.star;
+              var star;
+              if(starnum >80){
+                  star=5;
+              }else if(starnum<=80&&starnum>60){
+                   star=4;
+              }
+              }else if(starnum<=60&&starnum>40){
+                   star=3;
+              }else if(starnum<=40&&starnum>20){
+                   star=2;
+              }else if(starnum<=20&&starnum>0){
+                   star=1;
+              }else{
+                    star = 0;
+              }
+              alert(star);
+              for(var i =0;i<5;i++){
+                  var text = $("<i class='am-icon-star am-padding-xs'></i>");
+                  $("#star-count").append(text); 
+              }
+               for(var i =0;i<star;i++){
+                 
+                  $("#star-count").find("i").eq(i).addClass("yellor")
+              }
+
+
+    
+               //五星
+
+
+            
+          
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            // alert(XMLHttpRequest.status);
+            // alert(XMLHttpRequest.readyState);
+           alert("网络不好，稍后重试！");
+        },
+        complete: function(XMLHttpRequest, textStatus) {
+            this; // 调用本次AJAX请求时传递的options参数
+        }
+    });
+    //图片轮播
+     function img(img){
+      $("#image").attr("src",img);
+
+     }
+    //图片轮播
+    //推荐商家
+    search();
+   
+    function search(){
+        var data = {lat:lat,lng:lng,city_id:cityid};
+        $.ajax({
+            url:  htt+"/App/Index/recommendInfo",
+            type: "get",
+            data:data,
+            dataType: "json",
+            success: function(msg) {
+                console.log(msg);
+                  var data = msg.data;
+                 if(msg.code ==1){
+                  $("#title").text(name);
+                  console.log(data.length);
+                  console.log(data);
+                  var len;
+                  data.length>2?len = 2:len=data.length;
+                  for (var i = 0; i <len; i++) {
+                       var id =data[i].id;
+                       var url = "../detail/detail.html?id="+id;        //拼接跳转路径
+                       console.log(id);
+                       $("  <li class='am-cf am-padding-horizontal-sm products_lists'>"
+                             +" <a href='"+url+"' style='color:#333;display:block;padding:7px 0;overflow:hidden;'>"
+                               +" <div class='am-fl am-text-center img_placeholder' style='background:url("+data[i].img+");background-size:100% 100%'> "
+                                +"</div>"
+                                +"<div class='products_info am-fr'>"
+                                  +"<div class='am-text-truncate' style='line-height:1.6;overflow:hidden;'>"
+                                    +"<span class='am-text-truncate am-fl products_name'>"+data[i].title+"</span>"
+                                    +"<span class='am-text-xs am-fr'>"+data[i].distance+"</span>"
+                                 +" </div>"
+                                  +"<div class='am-text-left am-text-xs am-text-wrap products_address'><i class='am-icon-paper-plane'></i>"+data[i].address+"</div>"
+                                  +"<div class='products_hot am-text-sm'>"
+                                    +"<span class='am-text-danger am-text-xs am-fl'>返<strong class='am-text-lg'>"+data[i].dis+"</strong>%</span>"
+                                    +"<span class='am-text-xs am-fr'>"
+                                      +" <i class='am-icon-fire am-text-danger'></i>人气<span>"+data[i].renqi+"</span>"
+                                    +"</span>"
+                                  +"</div>"
+                               +" </div>"
+                              +"</a>"
+                            +"</li>").appendTo("#list");
+                  }
+                }
+                if(msg.code =="0"){                                
+                   alert("重试")
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                // alert(XMLHttpRequest.status);
+                // alert(XMLHttpRequest.readyState);
+               alert("网络不好，稍后重试！");
+            },
+            complete: function(XMLHttpRequest, textStatus) {
+                this; // 调用本次AJAX请求时传递的options参数
+            }
+        });
+
+      }
+    //推荐商家
+
+</script>
+</body>
+</html>

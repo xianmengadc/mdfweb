@@ -1,0 +1,354 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <title>买单返</title>
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta  name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="icon" type="image/png" href="i/favicon.png">
+  <link rel="stylesheet" href="css/amazeui.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="no-js">
+<!--个人信息 --> 
+  <div class="am-g personal-info">
+    <!--<button class="onButtonClick">微信分享</button>-->
+    <div class="am-margin-vertical-sm am-cf">
+      <div class="am-u-sm-10 am-vertical-align">
+        <img id="img" class="am-vertical-align-middle am-circle am-margin-horizontal-sm personal-img" src=""/>
+        <span class="am-vertical-align-middle">
+          <span class="am-text-lg">我的微信账户名</span><br>
+           <span class="am-text-xs">买单返ID</span><span id="mdfid" class="am-text-sm am-text-danger am-padding-left">(未激活)</span>
+        </span>
+      </div>
+      <div class="am-u-sm-2 am-text-right am-vertical-align am-text-center">
+        <span class="am-icon-qrcode am-text-xxl am-vertical-align-middle" id="scanCode"></span>
+        <!-- <span class="am-icon-angle-right am-text-xl am-vertical-align-middle"></span> -->
+      </div> 
+    </div>
+    <ul class="am-avg-sm-3 am-text-center am-margin-top am-padding-vertical-sm items">
+      <li class="am-vertical-align">
+        <a href="#">   
+          <img class="am-vertical-align-middle" src="images/icon-fans.png" width="20" height="20">
+          <span class="am-text-middle">粉丝</span><span id="fans" class="am-text-middle">0</span
+        </a> 
+      </li>
+      <li class="am-vertical-align horizontalBorder">
+        <a href="pages/myCollection/myCollection.html">   
+          <img class="am-vertical-align-middle" src="images/icon-collection.png" width="20" height="20">
+          <span class="am-text-middle">收藏</span><span  class="am-text-middle" id="sc">0</span>
+        </a>
+      </li>
+      <li class="am-vertical-align" id="qd">
+        <a href="#">
+          <img class="am-vertical-align-middle" src="images/icon-signIn.png" width="20" height="20">
+          <span class="am-text-middle">签到</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+ 
+  <!-- 我的订单 -->  
+  <ul class="am-list">
+    <li> 
+      <a href="pages/myOrders.html">
+        <div class="am-container am-text-sm">
+          <div class="am-u-sm-9 list-item">
+            <span class="am-margin-left-sm list-txt">我的订单</span>
+          </div>
+          <div class="am-u-sm-3 list-item-right">
+            <i class="am-icon-angle-right am-text-xl am-fr"></i>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="am-text-sm"> 
+      <ul class="am-avg-sm-3 am-text-center items am-padding-vertical-xs">
+        <li>
+          <img src="images/icon-finished.png" width="20" height="20">
+          <a href="pages/myOrders.html" class="am-text-middle">已完成</a>
+        </li>
+        <li class="horizontalBorder">
+          <img src="images/icon-toEvaluate.png" width="20" height="20">
+          <a href="pages/myOrders.html?is=will" class="am-text-middle">待评价<span class="am-text-danger">(<span id="numwill">0</span>)</span></a>
+        </li>
+        <li>
+          <img src="images/icon-returnMoney.png" width="20" height="20">
+          <a href="pages/financialRecords/fanlidingdan.html" class="am-text-middle">返利订单</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- /我的订单 -->
+
+  <ul class="am-list">
+    <li>
+      <a href="pages/financialRecords/financialRecords.html">
+        <div class="am-container am-text-sm">
+          <div class="am-u-sm-9 list-item">
+            <img src="images/icon-money.png">
+            <span class="am-text-sm am-margin-sm m-vertical-align-middle">余额提现</span>
+            <span  class="list-txt"><span id="yue"></span>元</span>
+          </div>
+          <div class="am-u-sm-3 list-item-right">
+            <i class="am-icon-angle-right am-text-xl am-fr"></i>
+            <span class="am-margin-left-sm list-txt withdrawalTxt">提现</span>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="pages/financialRecords/financialRecords.html">
+        <div class="am-container am-text-sm">
+          <div class="am-u-sm-10 list-item">
+            <img src="images/icon-jilu.png">
+            <span class="am-margin-left-sm list-txt">财务记录</span>
+          </div>
+          <div class="am-u-sm-2 list-item-right">
+            <i class="am-icon-angle-right am-text-xl am-fr"></i>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  
+  <!-- 摇一摇红包 推荐商家开店 申请行用卡-->
+   <ul class="am-list personal-info-lists">
+    <li><a href="pages/promoteMakemonery/promoteMakemonery.html">
+      <div class="am-container am-text-sm">
+        <div class="am-u-sm-10 list-item">
+          <img src="images/icon-tuiguang.png" width="24" height="24">
+          <span class="am-margin-left-sm list-txt">推广赚钱</span>
+        </div>
+        <div class="am-u-sm-2 list-item-right">
+          <i class="am-icon-angle-right am-text-xl am-fr"></i>
+        </div>
+      </div>
+    </a></li>
+
+    <li><a href="pages/businessRecommend/businessRecommend.html">
+      <div class="am-container am-text-sm">
+        <div class="am-u-sm-10 list-item">
+          <img src="images/icon-tenants.png" width="24" height="24">
+          <span class="am-margin-left-sm list-txt">推荐商家开店</span>
+        </div>
+        <div class="am-u-sm-2 list-item-right">
+          <i class="am-icon-angle-right am-text-xl am-fr"></i>
+        </div>
+      </div>
+    </a></li>
+
+    <li><a href="#">
+      <div class="am-container am-text-sm">
+        <div class="am-u-sm-10 list-item">
+          <img src="images/icon-red.png">
+          <span class="am-margin-left-sm list-txt">摇一摇红包</span>
+        </div>
+        <div class="am-u-sm-2 list-item-right">
+          <i class="am-icon-angle-right am-text-xl am-fr"></i>
+        </div>
+      </div>
+    </a></li>
+
+    <!-- 行用卡 -->
+    <li>
+      <a href="pages/creditCard/index.html">
+        <div class="am-container list-item">
+          <div class="am-u-sm-7 list-item">
+            <img src="images/icon-recommended.png">
+            <span class="am-margin-left-sm list-txt am-text-sm am-vertical-align-middle">申请行用卡</span>
+          </div>
+          <div class="am-u-sm-5 list-item-right">
+            <i class="am-icon-angle-right am-text-xl am-fr am-vertical-align-middle"></i>
+            <span class="am-fr am-text-sm fastTrack">专属秒批通道</span>  
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+<!--底部 -->
+  <div data-am-widget="navbar" class="am-navbar am-cf am-no-layout">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+      <li>
+        <a href="pages/home/home.html">
+          <span class="am-icon-home"></span>
+          <span class="am-navbar-label">首页</span>
+        </a>
+      </li>
+     
+      <li>
+        <a href="pages/nearbyShops/nearbyShops.html">
+          <span class="am-icon-compass"></span>
+          <span class="am-navbar-label">附近</span>
+        </a>
+      </li>
+      <li id="mdbao">
+        <a href="pages/businessRecommend/businessRecommend.html" class="am-text-center" >
+          <span class="am-icon-bookmark"></span>
+          <span class="am-navbar-label">福利社</span>
+        </a>
+      </li>
+       <li>
+        <a href="index.html" style="color:#E60827;">
+          <span class="am-icon-user"></span>
+          <span class="am-navbar-label">个人中心</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+<script>
+//    $(".onButtonClick").on("click",function(){
+//        Wechat.isInstalled(function (installed) {
+//            WEIXININSTALL=installed;
+//            if(WEIXININSTALL){
+//                        微信登录
+//                        var scope = "snsapi_userinfo";
+//                        Wechat.auth(scope, function (response) {
+////                             you may use response.code to get the access token.
+//                            alert(JSON.stringify(response));
+//                        }, function (reason) {
+//                            alert("Failed: " + reason);
+//                        });
+
+                //微信分享
+                //Wechat.Scene.TIMELINE 表示分享到朋友圈
+                //Wechat.Scene.SESSION 表示分享给好友
+                //（1）文本
+//                Wechat.share({
+//                    text: "This is just a plain string",
+//                    scene: Wechat.Scene.TIMELINE   // share to Timeline
+//                }, function () {
+//                    alert("Success");
+//                }, function (reason) {
+//                    alert("Failed123: " + reason);
+//                });
+//            }else{
+//                alert('未检测到微信客户端')
+//            }
+//        });
+//        //微信登录
+//        var scope = "snsapi_userinfo";
+//        Wechat.auth(scope, function (response) {
+//            // you may use response.code to get the access token.
+//            alert(JSON.stringify(response));
+//        }, function (reason) {
+//            alert("Failed: " + reason);
+//        });
+
+//    });
+
+
+  var htt = "http://172.20.9.226:8080";
+
+
+  var lo_city = localStorage.getItem("city_name");
+  var cityid = localStorage.getItem("city_id");
+  var lat = localStorage.getItem("lat");
+  var lng = localStorage.getItem("lng");
+
+
+
+
+
+//  $("#mdbao").on('click',function(){
+//    $(this).siblings().find("a").css("color","#dedede");
+//    $(".mdbao1").toggleClass("mdbao2");
+//  });
+
+  /*
+  * 二维码
+  */
+  $("#scanCode").on("click",function(){
+    popMask1();
+  });
+
+
+
+   $.ajax({
+    url: htt+"/App/Index/hostCity",
+    type: "get",
+    dataType: "json",
+    success: function(re) {
+       if(re.code == 1){
+
+//         alert(re.data.length);
+         //粉丝
+          $("#fans").text("44");
+
+         //收藏
+          $("#sc").text("24");
+
+         //买单返id
+          $("#mdfid").text("0000001");
+
+         //头像
+         $("#img").attr("src","images/icon-fans.png");
+         //二维码
+         //余额
+         $("#yue").text("25.230");
+
+         //待评价
+         $("#numwill").text(re.data.length);
+       }
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+        // alert(XMLHttpRequest.status);
+        // alert(XMLHttpRequest.readyState);
+        // alert(textStatus);
+    },
+    complete: function(XMLHttpRequest, textStatus) {
+        this; // 调用本次AJAX请求时传递的options参数
+    }
+});
+
+
+ function popMask1(){ 
+   
+    var cHeight=document.documentElement.clientHeight;
+    var cWidth=document.documentElement.clientWidth;
+
+    var oMask1 = document.createElement("div");
+      oMask1.id = "mask1";
+      oMask1.style.width = cWidth+"px";
+      oMask1.style.height = cHeight+"px";
+      document.body.appendChild(oMask1);
+
+   var omaskContet1 = document.createElement("div");
+      omaskContet1.id = "maskContet1";
+      omaskContet1.style.width = cWidth+"px";
+      omaskContet1.style.height = cHeight+"px";
+      omaskContet1.innerHTML = "<div class='personal-code1'><h2 class=''>请扫描二维码</h2><img  src='' class='img-responsive'></div>";
+      omaskContet1.innerHTML = "<div class='personal-code1'><div class='personal-code-title1 am-text-sm am-text-center'>扫一扫，开始赚钱</div><img id='erweima' src='' class='img-responsive' style='width:150px'><p class='am-text-xs am-text-center' style='color:#777;'>该二维码将于<span id='time'></span>过期<br/>重新进入将更新.</p></div>";
+      document.body.appendChild(omaskContet1);
+
+      omaskContet1.onclick=function(){
+        document.body.removeChild(oMask1);
+        document.body.removeChild(omaskContet1);
+
+      }
+      //请求时间和二维码
+      $("#erweima").attr("src","images/personal-code.png");
+      $("#time").text("04月23日12：12");
+
+  } 
+//页面加载显示
+   //判的账号状态
+     
+    
+
+
+</script>
+</body>
+</html>
